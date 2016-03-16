@@ -42,9 +42,33 @@ FROM users
 RIGHT JOIN roles ON users.role_id = roles.id;
 
 -- aggregate functions like count can be used with join queries
--- count and the appropriate join type to get a list of roles along with the 	number of users that has the role. 
-
+-- count and the appropriate join type to get a list of roles along with the number of users 
+-- 		that has the role.  
 -- dont forget (group by)
+
+
+-- > BIg a S S H i n t !  <<--
+SELECT CONCAT(e.first_name, ' ', e.last_name) AS full_name, d.dept_name
+FROM employees AS e
+JOIN dept_emp AS de
+  ON de.emp_no = e.emp_no
+JOIN departments AS d
+  ON d.dept_no = de.dept_no
+WHERE de.to_date = '9999-01-01' AND e.emp_no = 10001;
+
+-- write a query that shows each department along with the name of the current manager for that department
+
+-- show department
+--  show current manager for that department
+
+SELECT dm.dept_no, dm.dept_name
+FROM employees AS e
+
+JOIN dept_manager AS dm
+	ON dm.dept_no
+	
+JOIN departments AS d
+	ON d.dept_name;
 
 
 
