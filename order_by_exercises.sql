@@ -16,10 +16,12 @@ SELECT first_name, last_name
 FROM employees
 WHERE hire_date LIKE '199%';
 
+-- employees born on christmas and hired in 90's
 SELECT first_name, last_name
 FROM employees
 WHERE birth_date LIKE '%%%%-12-25' AND hire_date LIKE '199%'
-ORDER BY hire_date desc;
+ORDER BY hire_date DESC
+LIMIT 5;
 
 SELECT first_name, last_name
 FROM employees
