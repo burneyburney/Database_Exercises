@@ -8,9 +8,9 @@ FROM employees
 WHERE last_name LIKE 'E%' OR last_name LIKE '%E'
 ORDER BY emp_no desc;
 
-SELECT first_name, last_name
+SELECT DISTINCT first_name, last_name
 FROM employees
-WHERE last_name LIKE 'E%E';
+WHERE last_name LIKE 'E%e';
 
 SELECT first_name, last_name
 FROM employees
@@ -25,8 +25,11 @@ SELECT first_name, last_name
 FROM employees
 WHERE last_name LIKE '%q%';
 
-SELECT first_name, last_name
+SELECT DISTINCT last_name
 FROM employees
-WHERE last_name LIKE '%q%' AND last_name NOT LIKE '%qu%';
+WHERE last_name LIKE '%q%' AND last_name NOT LIKE '%qu%'
+GROUP BY last_name;
 
+SELECT DISTINCT title
+FROM titles;
 
