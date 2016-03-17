@@ -5,12 +5,13 @@ USE codeup_test_db
 
 
 -- Write SELECT statements to output each of the following with a caption:
-    -- All albums in your table.
+-- All albums in your table.
     SELECT * FROM albums;
-    -- All albums released before 1980
+-- All albums released before 1980
     SELECT name AS 'Albums released before 1980' FROM albums WHERE release_date < '1980';
-    -- All albums by Michael Jackson
+-- All albums by Michael Jackson
     SELECT name AS 'Albums by Michael Jackson' FROM albums WHERE artist = 'Michael Jackson';
+
 
 -- After each SELECT add an UPDATE statement to:
     -- come back
@@ -19,21 +20,29 @@ USE codeup_test_db
     SET sales = ()
     WHERE sales = (sales * 10)
 
--- Move all the albums before 1980 back to the 1800s.
-    -- aparently this doesnt work
+    SELECT sales FROM albums WHERE artist = 'mikey'
+
+
+-->
+--> Move all the albums before 1980 back to the 1800s.
+-->
+-- run commands
     UPDATE albums
     SET release_date = '1800-01-01'
-    WHERE release_date FROM albums WHERE release_date < '1980'
+    WHERE release_date < '1980';
+-- view changes
     SELECT release_date FROM albums WHERE release_date < '1980';
 
--- Change "Michael Jackson" to "Peter Jackson"
+
+
+-->
+--> Change "Michael Jackson" to "Peter Jackson <--
+-->
+-- view before
     SELECT * FROM albums WHERE artist = 'Michael Jackson';
-    
-    UPDATE albums
+-- run commands
+    UPDATE albumsf
     SET artist = 'Peter Jackson'
-    WHERE id = 1
+    WHERE artist = 'Michael Jackson';
+-- view after
     SELECT * FROM albums WHERE artist = 'Peter Jackson';
-
---> 1,11,17  <-- MICHAEL JACKSON id locations
-
--- Add SELECT statements after each UPDATE so you can see the results of your handiwork.
